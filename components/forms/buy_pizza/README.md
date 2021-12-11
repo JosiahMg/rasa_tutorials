@@ -34,6 +34,8 @@ rules
 
 ## slot
 ```shell
+domain
+----------------------------------
 entities:
   - pizza_size
   - pizza_type

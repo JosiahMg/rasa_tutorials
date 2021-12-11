@@ -8,6 +8,8 @@
  - slot定义方法
  
  ```shell
+ domain
+-----------------------
 slots:
   name:
     type: text
@@ -20,18 +22,24 @@ slots:
 
 - slot可以通过变量的形式定义在response中
 ```shell
+ domain
+-----------------------------------------------
 utter_greet:
   - text: "Hey, {name}. How is your day going?" # 明白slot如果填充
 ```
 - 发送图片给用户
 ```shell
-  utter_cheer_up:
+ domain
+---------------------------------------------
+utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"  # 明白可以发送图片
 ```
 
 - button
 ```shell
+ domain
+---------------------------------------------
   utter_did_that_help:
   - text: "Did that help you?"
     buttons:
@@ -62,13 +70,14 @@ SlotSet(key=slot_name, value=slot_value)
 ```
 
 # 疑问
-- slot为text类型，如何记录在story中
+- ~~slot为text类型，如何记录在story中？~~  
+答: 直接赋值字符串即可
 ```shell
 - story: greet by action server
   steps:
   - intent: greet_name
-    # - slot_was_set:
-    # - name: true  # text类型的slot如何设置
+    - slot_was_set:
+    - name: 'value'  # text类型的slot如何设置
   - action: action_greet
 ```
 
