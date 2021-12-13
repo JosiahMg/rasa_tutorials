@@ -1,12 +1,13 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
+language: zh
 
 pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-  - name: WhitespaceTokenizer
+  # - name: WhitespaceTokenizer
+  - name: JiebaTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
@@ -15,10 +16,11 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: "DucklingEntityExtractor"
-    url: "http://45.76.135.172:8000"
-    dimensions: ["time"]
+    url: "http://localhost:8000"
+    dimensions: ["time", "number"]
     # dimensions: ["time", "number", "amount-of-money", "distance"]
     # locale: "en_GB"
+    locale: "zh_ZH"
     timezone: "Asia/Shanghai"
     timeout : 3
   - name: DIETClassifier

@@ -29,6 +29,23 @@ stories
   - shirt_size: large
 ```
 
+- slot_was_set同时设置多个值
+减少story的编写个数
+```shell
+stories
+--------------------------------
+- story: give shirt size
+  steps:
+  - intent: give_shirt_size
+  - or:
+    - slot_was_set:
+      - shirt_size: large
+    - slot_was_set:
+      - shirt_size: small
+    - slot_was_set:
+      - shirt_size: medium
+```
+
 - get_slot方法
 ```shell
 actions.py

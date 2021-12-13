@@ -32,8 +32,8 @@ stories:
 - story: greet by action server
   steps:
   - intent: greet_name
-    # - slot_was_set:
-    # - name: true  # text类型的slot如何设置
+  # - slot_was_set:
+  #   - name: true  # text类型的slot如何设置
   - action: action_greet
 
 
