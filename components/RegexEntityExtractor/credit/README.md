@@ -34,6 +34,7 @@ config
     case_sensitive: False
     use_lookup_tables: true
     use_regexes: true
+    use_word_boundaries: False   # 中文需要设置为false
 ```
 
 
@@ -52,5 +53,4 @@ config
     - poster
     - key
 ```
-
 
