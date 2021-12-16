@@ -39,4 +39,16 @@ slots:
         entity: place
 ```
 
+- story中entity和slot的设置
+```shell
+  - intent: where_i_live
+    entities:
+    - place: london
+  - action: action_remember_where
+  - slot_was_set:
+    - location: london
+  - intent: inquire_time_difference
+    entities:
+    - place: amsterdam
+```
 
